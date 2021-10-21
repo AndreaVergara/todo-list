@@ -3,7 +3,7 @@
 abstract class ApiController {
     protected $model;
     protected $view;
-    private $data; 
+    protected $data; 
 
     public function __construct() {
         $this->view = new JSONView();

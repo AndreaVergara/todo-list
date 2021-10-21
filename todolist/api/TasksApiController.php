@@ -41,16 +41,15 @@ class TasksApiController extends ApiController{
    public function addTask($params = []) {     
         $task = $this->getData(); 
         
-        
-        $tareaId = $this->model->insertTask($task->detail);
-
+       $tareaId = $this->model->insertTask($task->detail);
        
-        $newTask = $this->model->getTask($tareaId);
+       $newTask = $this->model->getTask($tareaId);
+       
         
         if ($newTask)
-            $this->view->response($newTask, 200);
+             $this->view->response($newTask, 200);
         else
-            $this->view->response("Error al insertar tarea", 500);
+             $this->view->response("Error al insertar tarea", 500);
 
     }
 

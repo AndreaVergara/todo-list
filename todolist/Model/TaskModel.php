@@ -20,6 +20,8 @@ class TaskModel{
     function insertTask($detail){
         $query = $this->db->prepare("INSERT INTO task(detail) VALUES(?)");
         $query->execute(array($detail));
+
+        return $this->db->lastInsertId();
     }
 
     function deleteTaskFromDB($id){
